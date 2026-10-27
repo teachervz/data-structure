@@ -428,6 +428,46 @@ b{font-weight:800}
 .v-err .ar{font-family:var(--font);display:block;color:var(--ok);font-size:28px;font-weight:900;direction:rtl;text-align:right}
 
 /* =========================================================
+   شرائح الربط
+   ========================================================= */
+.lk-quote{position:relative;background:#fff;border:3px solid var(--line);border-radius:30px;padding:34px 36px 30px;display:flex;flex-direction:column;gap:16px;min-height:330px;justify-content:center;overflow:hidden;transition:transform .25s;box-shadow:0 20px 40px -26px rgba(80,50,160,.45)}
+.lk-quote:hover{transform:translateY(-4px)}
+.lk-quote::before{content:"";position:absolute;inset:0 0 auto 0;height:12px;background:var(--lc)}
+.lk-quote.math{--lc:linear-gradient(90deg,#2563EB,#60A5FA)}
+.lk-quote.rel{--lc:linear-gradient(90deg,#0E7C66,#34D399)}
+.lk-quote.home{--lc:linear-gradient(90deg,#006C35,#22C55E)}
+.lk-quote.law{--lc:linear-gradient(90deg,var(--p),var(--b))}
+.lq-label{font-size:28px;font-weight:800;color:var(--p)}
+.lk-quote.rel .lq-label,.lk-quote.home .lq-label{color:#0E7C66}
+.lq-text{font-size:44px;font-weight:900;line-height:1.6;color:var(--ink);filter:blur(10px);opacity:.3;transition:all .6s}
+.lk-quote.law .lq-text{font-size:36px}
+.lk-quote.rel .lq-text{color:#0E7C66;font-size:52px;text-align:center}
+.lq-src{font-size:26px;font-weight:700;color:var(--muted);filter:blur(10px);opacity:.3;transition:all .6s .15s}
+.lk-quote.open .lq-text,.lk-quote.open .lq-src{filter:none;opacity:1}
+.lk-quote.open .vc-tap{opacity:0}
+.lk-quote .vc-tap{top:55%}
+.lk-link{font-size:30px;font-weight:700;line-height:1.6;background:var(--ps);border-radius:22px;padding:18px 26px;border-right:8px solid var(--p2)}
+.lk-link .mono{direction:ltr;display:inline-block;color:var(--p)}
+.lk-chips{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;background:#fff;border:3px dashed #BFDBFE;border-radius:24px;padding:12px 14px}
+.lk-chips .par{font-family:var(--mono);font-size:56px;color:var(--b2);font-weight:800}
+.lkc{background:#fff;border:3px solid #BFDBFE;border-radius:16px;padding:6px 16px;text-align:center;cursor:pointer;transition:all .25s}
+.lkc:hover{transform:translateY(-3px);border-color:var(--b2)}
+.lkc small{font-family:var(--mono);font-size:16px;font-weight:800;color:var(--b);display:block}
+.lkc b{font-family:var(--mono);font-size:26px;display:block}
+.lkc span{font-size:19px;color:var(--muted);font-weight:700}
+.lkc.on{border-color:var(--acc);background:var(--accs);transform:translateY(-6px);box-shadow:0 14px 24px -12px rgba(245,158,11,.7)}
+.lk-chips.many{gap:7px;padding:10px}
+.lk-chips.many .par{font-size:40px}
+.lk-chips.many .lkc{padding:3px 9px;border-radius:12px}
+.lk-chips.many .lkc b{font-size:17px}
+.lk-chips.many .lkc span{font-size:15px}
+.lk-chips.many .lkc small{font-size:13px}
+.lk-chips.denied .lkc{border-color:var(--bad);background:var(--bads)}
+.type-link .code{font-size:23px}
+.type-link .term-body{font-size:26px;min-height:76px}
+.lk-acts{justify-content:flex-start;flex-wrap:wrap}
+
+/* =========================================================
    الأسئلة (اختيار من متعدد)
    ========================================================= */
 .q-card{width:100%;max-width:1500px;background:#fff;border:3px solid var(--line);border-radius:30px;padding:28px 40px;display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;box-shadow:0 20px 40px -26px rgba(80,50,160,.4)}
@@ -745,26 +785,70 @@ const SLIDES = [
     ],
     tip:'اضغطي على كل صف لكشفه، أو ناقشي مع مجموعتك قبل الكشف 👭' },
 
-  /* 17) ربط بالدين والوطن والمادة 34 */
-  { type:'values', transition:'zoom', badge:'ربط بالقيم', title:'🇸🇦 ثوابتنا… Tuple لا يتغيّر',
-    code:'values = ("Faith", "Society", "Homeland")\n# protected constants 🔒',
-    chips:['العقيدة','المجتمع','الوطن'],
-    cards:[
-      { cls:'rel', icon:'🕌', title:'ربط بالدين',
-        quote:'﴿وَكُلَّ شَيْءٍ أَحْصَيْنَاهُ فِي إِمَامٍ مُبِينٍ﴾<br><small>[يس: 12]</small>',
-        link:'كل شيء محفوظ مُحصى بدقة؛ ونتعلّم منها قيمة الإتقان والتنظيم، كما تحفظ القائمة البيانات مرتّبة ولكل عنصر موقعه.' },
-      { cls:'law', icon:'⚖️', title:'المادة 34 • النظام الأساسي للحكم',
-        quote:'«الدفاع عن العقيدة الإسلامية، والمجتمع، والوطن واجب على كل مواطن…»',
-        link:'كما أن قيم الـ Tuple ثابتة محميّة من التغيير، فعقيدتنا ومجتمعنا ووطننا ثوابت نحميها وندافع عنها.' },
-      { cls:'home', icon:'🇸🇦', title:'ربط بالوطن',
-        quote:'البيانات ثروة وطنية تبني مستقبلنا الرقمي ضمن رؤية السعودية 2030',
-        link:'كل قائمة تنظّمينها اليوم خطوة لتكوني مبرمجة تحمي بيانات وطنها وتخدمه 💚' },
-    ],
-    tryCode:'values[2] = "?"',
-    tryMsg:"TypeError: 'tuple' object does not support item assignment",
-    tryAr:'ثوابتنا لا تقبل التغيير 💚' },
+  /* 17) ربط بالرياضيات */
+  { type:'link', transition:'zoom', theme:'math', badge:'ربط بالرياضيات', title:'🧮 المتوسط الحسابي… بالقوائم!',
+    quoteLabel:'📐 من الرياضيات',
+    quote:'المتوسط الحسابي = مجموع القيم ÷ عددها',
+    source:'نرمز لعناصر المتتابعة: a₁ , a₂ , a₃ …',
+    link:'نحسب المتوسط في بايثون بقسمة <b class="mono">sum</b> على <b class="mono">len</b>، وبدل الرموز a₁ , a₂ نكتب <b class="mono" dir="ltr">grades[0]</b> , <b class="mono" dir="ltr">grades[1]</b>… والفرق أن بايثون تبدأ العدّ من 0 😉',
+    name:'grades', open:'[', close:']',
+    chips:[{en:'89'},{en:'88'},{en:'98'},{en:'95'}],
+    file:'math.py',
+    code:'grades = [89, 88, 98, 95]',
+    actions:[
+      { label:'▶ المجموع', code:'print(sum(grades))', output:'370' },
+      { label:'▶ العدد', code:'print(len(grades))', output:'4' },
+      { label:'🧮 المتوسط', code:'average = sum(grades) / len(grades)\nprint("Average:", average)', output:'Average: 92.5', win:'أحسنتِ! حسبتِ المتوسط بالبرمجة 🧮👏' },
+    ] },
 
-  /* 18–22) أسئلة تفاعلية */
+  /* 18) ربط بالدين */
+  { type:'link', transition:'zoom', theme:'rel', badge:'ربط بالدين', title:'🕌 أركان الإسلام… ثابتة كالـ Tuple',
+    quoteLabel:'📖 قال رسول الله ﷺ',
+    quote:'«بُنِيَ الإسلامُ على خمسٍ…»',
+    source:'متفق عليه',
+    link:'أركان الإسلام خمسة <b>ثابتة لا تتغيّر</b>، لذلك نمثّلها بصف <b class="mono">Tuple</b> بين أقواس دائرية، ولكل ركن ترتيبه وفهرسه.',
+    name:'pillars', open:'(', close:')',
+    chips:[{en:'Shahada',ar:'الشهادتان'},{en:'Salah',ar:'الصلاة'},{en:'Zakah',ar:'الزكاة'},{en:'Sawm',ar:'الصوم'},{en:'Hajj',ar:'الحج'}],
+    file:'pillars.py',
+    code:'pillars = ("Shahada", "Salah", "Zakah",\n           "Sawm", "Hajj")',
+    actions:[
+      { label:'▶ print(len(pillars))', code:'print(len(pillars))', output:'5' },
+      { label:'▶ print(pillars[1])', code:'print(pillars[1])', output:'Salah' },
+      { label:'✏️ جرّبي التعديل', code:'pillars[1] = "?"', output:"TypeError: 'tuple' object does not\nsupport item assignment", error:true, msg:'🔒 أركان الإسلام ثابتة لا تتغيّر' },
+    ] },
+
+  /* 19) ربط بالوطن */
+  { type:'link', transition:'zoom', theme:'home', badge:'ربط بالوطن', title:'🇸🇦 مناطق وطني… في قائمة',
+    quoteLabel:'🇸🇦 وطني المملكة العربية السعودية',
+    quote:'13 منطقة إدارية… وطن واحد 💚',
+    source:'والبيانات المنظّمة ثروة وطنية في رؤية السعودية 2030',
+    link:'نخزّن مناطق وطننا في <b>قائمة</b> ونصل لكل منطقة بفهرسها، ونعرف عددها بـ <b class="mono">len</b>. كل قائمة تنظّمينها اليوم خطوة لتكوني مبرمجة تخدم وطنها 🇸🇦',
+    name:'regions', open:'[', close:']', many:true,
+    chips:[{en:'Riyadh',ar:'الرياض'},{en:'Makkah',ar:'مكة المكرمة'},{en:'Madinah',ar:'المدينة المنورة'},{en:'Qassim',ar:'القصيم'},{en:'Eastern',ar:'الشرقية'},{en:'Asir',ar:'عسير'},{en:'Tabuk',ar:'تبوك'},{en:'Hail',ar:'حائل'},{en:'Northern Borders',ar:'الحدود الشمالية'},{en:'Jazan',ar:'جازان'},{en:'Najran',ar:'نجران'},{en:'Al-Bahah',ar:'الباحة'},{en:'Al-Jouf',ar:'الجوف'}],
+    file:'saudi.py',
+    code:'regions = ["Riyadh", "Makkah", "Madinah", "Qassim",\n  "Eastern", "Asir", "Tabuk", "Hail", "Northern Borders",\n  "Jazan", "Najran", "Al-Bahah", "Al-Jouf"]',
+    actions:[
+      { label:'▶ print(len(regions))', code:'print(len(regions))', output:'13' },
+      { label:'▶ print(regions[3])', code:'print(regions[3])', output:'Qassim', mark:3, win:'القصيم 💚' },
+      { label:'▶ print(regions[-1])', code:'print(regions[-1])', output:'Al-Jouf', mark:12 },
+    ] },
+
+  /* 20) المادة 34 */
+  { type:'link', transition:'zoom', theme:'law', badge:'ربط بالمادة 34', title:'⚖️ ثوابتنا… لا تقبل التعديل',
+    quoteLabel:'📜 المادة الرابعة والثلاثون • النظام الأساسي للحكم',
+    quote:'«الدفاع عن العقيدة الإسلامية، والمجتمع، والوطن واجب على كل مواطن، ويبين النظام أحكام الخدمة العسكرية»',
+    source:'',
+    link:'كما أن قيم الـ <b class="mono">Tuple</b> ثابتة ومحميّة من التعديل، فإن <b>عقيدتنا ومجتمعنا ووطننا</b> ثوابت نحميها ونعتز بها، والدفاع عنها واجب على كل مواطن ومواطنة.',
+    name:'values', open:'(', close:')',
+    chips:[{en:'Faith',ar:'العقيدة'},{en:'Society',ar:'المجتمع'},{en:'Homeland',ar:'الوطن'}],
+    file:'article34.py',
+    code:'values = ("Faith", "Society", "Homeland")',
+    actions:[
+      { label:'▶ print(values)', code:'print(values)', output:"('Faith', 'Society', 'Homeland')" },
+      { label:'✏️ جرّبي التعديل', code:'values[2] = "?"', output:"TypeError: 'tuple' object does not\nsupport item assignment", error:true, msg:'💚 ثوابتنا لا تقبل التغيير' },
+    ] },
+
+  /* 21–25) أسئلة تفاعلية */
   { type:'mcq', transition:'zoom', badge:'التقييم الفوري', title:'❓ اختاري الإجابة الصحيحة',
     q:'ترقيم (فهرسة) القائمة يبدأ من:',
     options:[{ icon:'0️⃣', t:'0', code:1 },{ icon:'1️⃣', t:'1', code:1 },{ icon:'➖', t:'-1', code:1 }],
@@ -1394,6 +1478,42 @@ const T = {
     init(el,d){
       $$('.v-card',el).forEach(c=>c.addEventListener('click',()=>{ if(!c.classList.contains('open')){ c.classList.add('open'); Sound.success(); } }));
       $('[data-a=try]',el).onclick=()=>{ const e=$('.v-err',el); e.innerHTML=`${esc(d.tryMsg)}<span class="ar">${d.tryAr}</span>`; Fx.shake($('.v-chips',el)); Sound.wrong(); };
+    }
+  },
+
+
+  /* ---------- شرائح الربط (رياضيات / دين / وطن / المادة 34) ---------- */
+  link:{
+    render:d=>`${head(d)}<div class="s-body">
+      <div class="col-text">
+        <div class="lk-quote anim ${d.theme||''}" role="button" tabindex="0">
+          <div class="lq-label">${d.quoteLabel}</div>
+          <div class="lq-text">${d.quote}</div>
+          ${d.source?`<div class="lq-src">${d.source}</div>`:''}
+          <span class="vc-tap">👆 اضغطي للكشف</span>
+        </div>
+        <div class="lk-link anim">🔗 <b>الربط:</b> ${d.link}</div>
+      </div>
+      <div class="col-code">
+        <div class="lk-chips anim ${d.many?'many':''}" dir="ltr"><span class="par">${d.open}</span>${d.chips.map((c,k)=>`<div class="lkc" data-i="${k}"><small>[${k}]</small><b>${esc(c.en)}</b>${c.ar?`<span>${c.ar}</span>`:''}</div>`).join('')}<span class="par">${d.close}</span></div>
+        <div class="anim lcode">${codeBlock(d.code,d.file||'main.py')}</div>
+        <div class="anim row gap lk-acts">${d.actions.map((a,k)=>`<button class="btn ${a.error?'ghost':'run'} sm" data-k="${k}">${a.label}</button>`).join('')}</div>
+        <div class="anim">${terminal()}</div>
+      </div></div>`,
+    init(el,d){
+      const q=$('.lk-quote',el), chips=$$('.lkc',el), box=$('.lk-chips',el), term=$('.term-body',el), lc=$('.lcode',el);
+      const isTuple=d.open==='(';
+      const lit=v=>/^-?\d+(\.\d+)?$/.test(v)?v:`"${v}"`;
+      q.addEventListener('click',()=>{ if(!q.classList.contains('open')){ q.classList.add('open'); Sound.success(); } });
+      const mark=i=>{ chips.forEach(c=>c.classList.toggle('on', +c.dataset.i===i)); };
+      chips.forEach(c=>c.addEventListener('click',()=>{ const i=+c.dataset.i; box.classList.remove('denied'); mark(i);
+        setCode(lc,`${d.code}\nprint(${d.name}[${i}])`); typeOut(term,d.chips[i].en); }));
+      $$('.lk-acts .btn',el).forEach(b=>b.addEventListener('click',()=>{
+        const a=d.actions[+b.dataset.k]; box.classList.remove('denied'); mark(a.mark===undefined?-1:a.mark);
+        setCode(lc,`${d.code}\n${a.code}`); typeOut(term,a.output,!!a.error);
+        if (a.error){ box.classList.add('denied'); Fx.shake(box); if(a.msg) setTimeout(()=>Fx.toast(a.msg,'ok'),500); }
+        else if (a.win) setTimeout(()=>celebrate(a.win),600);
+      }));
     }
   },
 
