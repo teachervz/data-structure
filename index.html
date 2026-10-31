@@ -642,7 +642,20 @@ const SLIDES = [
     subtitle:'Lists & Tuples',
     code:'print("صباح البيانات يا مبرمجات 💜")' },
 
-  /* 2) مراجعة الدروس السابقة: التجارة الإلكترونية */
+  /* 2) قوانين صفية */
+  { type:'goals', transition:'slide', badge:'قوانين صفية', title:'📜 قوانين فصلنا البرمجي',
+    emoji:'🤝', file:'rules.py',
+    items:[
+      { icon:'✋', text:'أرفع يدي قبل الإجابة أو الحديث.' },
+      { icon:'👂', text:'أُنصت جيدًا للمعلمة ولزميلاتي.' },
+      { icon:'💻', text:'أحافظ على الأجهزة ولا أفتح إلا ما يُطلب مني.' },
+      { icon:'🤝', text:'أتعاون مع مجموعتي وأحترم آراء الجميع.' },
+      { icon:'⏱️', text:'ألتزم بالوقت المحدد لكل نشاط.' },
+      { icon:'🌟', text:'لا بأس بالخطأ… فهو أول خطوة للتعلّم!' },
+    ],
+    code:'rules = ("respect", "listen",\n         "teamwork", "on_time")\nprint("Ready to code! 💜")' },
+
+  /* 3) مراجعة الدروس السابقة: التجارة الإلكترونية */
   { type:'flip', transition:'slide', badge:'استراتيجية الأسئلة • مراجعة',
     title:'🔁 نتذكّر معًا: التجارة الإلكترونية',
     hint:'اختاري بطاقة… فكّري في الإجابة… ثم اضغطي لكشفها',
@@ -653,7 +666,7 @@ const SLIDES = [
       { icon:'🔐', q:'كيف أتأكد من أمان الموقع قبل الشراء؟', a:'وجود <span class="mono">https</span> وعلامة القفل 🔒، وأن يكون المتجر موثّقًا وله تقييمات' },
     ] },
 
-  /* 3) أهداف الدرس */
+  /* 4) أهداف الدرس */
   { type:'goals', transition:'slide', badge:'أهداف الدرس', title:'🎯 في نهاية الدرس سأكون قادرة على أن…',
     items:[
       { icon:'🌳', text:'أتعرّف هياكل البيانات وأنواعها.' },
@@ -665,28 +678,20 @@ const SLIDES = [
     ],
     code:'today = ["List", "Tuple",\n         "Index", "Functions"]\nprint("Let\'s learn!")' },
 
-  /* 4) تمهيد: فك شيفرة الدرس */
-  { type:'cipher', transition:'zoom', badge:'تمهيد • لاحظي واكتشفي', title:'🔐 فكّي شيفرة درس اليوم!',
-    intro:'كل رقم في الشيفرة يدلّك على موقع حرف في المفتاح… انتبهي: أول خانة رقمها <b class="mono">0</b> 😉',
-    letters:['ئ','ل','م','ق','ا','و'],
-    message:[4,1,3,5,4,0,2],
-    answer:'القوائم',
-    after:'موضوع درسنا اليوم 🎉' },
-
   /* 5) ماذا تتوقعين؟ جامع البيانات */
   { type:'collector', transition:'slide', badge:'ماذا تتوقعين؟', title:'🗄️ بيانات كثيرة… في متغيّر واحد؟',
-    srcTitle:'📥 بيانات طالبة في سجل المدرسة — اضغطي لتخزينها',
-    varName:'data',
+    srcTitle:'🛒 فواكه متجر «فاكهتي» — اضغطي لتخزينها',
+    varName:'fruits',
     packets:[
-      { e:'👩‍🎓', v:'"Sara"',  py:'"Sara"',  r:"'Sara'", t:'str',   tl:'نص' },
-      { e:'🎂', v:'15',      py:'15',      r:'15',     t:'int',   tl:'عدد صحيح' },
-      { e:'📏', v:'1.55',    py:'1.55',    r:'1.55',   t:'float', tl:'عدد عشري' },
-      { e:'🏫', v:'"3rd"',   py:'"3rd"',   r:"'3rd'",  t:'str',   tl:'نص' },
-      { e:'💯', v:'98',      py:'98',      r:'98',     t:'int',   tl:'عدد صحيح' },
-      { e:'✅', v:'True',    py:'True',    r:'True',   t:'bool',  tl:'منطقي' },
+      { e:'🍎', v:'"apple"',      py:'"apple"',      r:"'apple'",      t:'str', tl:'نص' },
+      { e:'🍊', v:'"orange"',     py:'"orange"',     r:"'orange'",     t:'str', tl:'نص' },
+      { e:'🍌', v:'"banana"',     py:'"banana"',     r:"'banana'",     t:'str', tl:'نص' },
+      { e:'🥭', v:'"mango"',      py:'"mango"',      r:"'mango'",      t:'str', tl:'نص' },
+      { e:'🍇', v:'"grape"',      py:'"grape"',      r:"'grape'",      t:'str', tl:'نص' },
+      { e:'🍓', v:'"strawberry"', py:'"strawberry"', r:"'strawberry'", t:'str', tl:'نص' },
     ],
-    question:'كيف نخزّن كل هذه البيانات المختلفة معًا في متغيّر واحد مرتّب؟',
-    answer:'في <b>قائمة List</b> 📋: مجموعة مرتبة داخل أقواس مربعة <span class="mono" dir="ltr">[ ]</span>، ولكل عنصر رقم (فهرس) يبدأ من 0، ويمكن أن تختلف أنواع عناصرها!' },
+    question:'كيف يخزّن المتجر كل هذه الفواكه معًا في متغيّر واحد مرتّب؟',
+    answer:'في <b>قائمة List</b> 📋: مجموعة مرتبة داخل أقواس مربعة <span class="mono" dir="ltr">[ ]</span>، ولكل عنصر رقم (فهرس) يبدأ من 0!' },
 
   /* 6) العصف الذهني */
   { type:'brainstorm', transition:'zoom', badge:'العصف الذهني', title:'🧠 أين نرى «القوائم» في حياتنا؟',
@@ -695,7 +700,7 @@ const SLIDES = [
     ideas:['أسماء طالبات الفصل 👩‍🎓','جدول الحصص 🗓️','درجات الاختبار 💯','جهات الاتصال 📱','قائمة المهام ✅','ترتيب الفرق في الدوري 🏆'] },
 
   /* 7) هياكل البيانات */
-  { type:'tree', transition:'slide', badge:'لاحظي واكتشفي', title:'🌳 هياكل البيانات',
+  { type:'tree', transition:'slide', badge:'استراتيجية الفهم القرائي • لاحظي واكتشفي', title:'🌳 هياكل البيانات',
     root:'هياكل البيانات', rootEn:'Data Structures',
     def:'وسيلة لتخزين البيانات وتنظيمها في الذاكرة 👆 اضغطي على كل صندوق لتكتشفي ما تحته',
     primitive:{ label:'هياكل بيانات بسيطة', en:'Primitive', note:'قيم بسيطة يعرّفها بايثون',
@@ -708,21 +713,21 @@ const SLIDES = [
           leaves:[['الشجرة','Tree'],['المخطط','Graph']] },
       ] } },
 
-  /* 8) القائمة: تعريف وصيغة */
-  { type:'code', transition:'slide', badge:'شرح', title:'📋 القائمة List',
+  /* 8) القائمة: تعريف وصيغة — قائمة أرقام */
+  { type:'code', transition:'slide', badge:'استراتيجية الفهم القرائي • شرح', title:'📋 القائمة List: قائمة أرقام 🔢',
     points:['أكثر هياكل البيانات الخطية استخدامًا في بايثون.','العناصر داخل أقواس مربعة <b class="mono">[ ]</b> وبينها فواصل.','لا يُشترط أن تكون العناصر من النوع نفسه.'],
     syntax:'List_Name = [item1, item2, ..., itemN]',
-    file:'lists.py',
-    code:'nums = [1, 132, 358, 14.5, 7.13]\nprint("numbers list:", nums)\nfruits = ["apple", "orange", "banana"]\nprint("fruits list:", fruits)',
-    output:"numbers list: [1, 132, 358, 14.5, 7.13]\nfruits list: ['apple', 'orange', 'banana']" },
+    file:'numbers.py',
+    code:'nums = [1, 132, 358, 14.5, 7.13]\nprint("numbers list:", nums)',
+    output:"numbers list: [1, 132, 358, 14.5, 7.13]" },
 
-  /* 9) التكرار مع القائمة */
-  { type:'code', transition:'fade', badge:'ماذا تتوقعين؟', title:'🔁 المرور على عناصر القائمة بـ for',
-    points:['يمرّ التكرار <b class="mono">for</b> على عناصر القائمة واحدًا تلو الآخر.','في كل دورة يأخذ المتغيّر <b class="mono">f</b> قيمة عنصر جديد.'],
-    predict:'قبل التشغيل: ماذا تتوقعين أن يظهر على الشاشة؟ كم سطرًا؟',
-    file:'loop.py',
-    code:'fruits = ["apple", "orange", "banana"]\nfor f in fruits:\n    print(f)',
-    output:'apple\norange\nbanana' },
+  /* 9) القائمة: تعريف وصيغة — قائمة فواكه */
+  { type:'code', transition:'slide', badge:'استراتيجية الفهم القرائي • شرح', title:'📋 القائمة List: قائمة فواكه 🍎',
+    points:['أكثر هياكل البيانات الخطية استخدامًا في بايثون.','العناصر داخل أقواس مربعة <b class="mono">[ ]</b> وبينها فواصل.','لا يُشترط أن تكون العناصر من النوع نفسه.'],
+    syntax:'List_Name = [item1, item2, ..., itemN]',
+    file:'fruits.py',
+    code:'fruits = ["apple", "orange", "banana"]\nprint("fruits list:", fruits)',
+    output:"fruits list: ['apple', 'orange', 'banana']" },
 
   /* 10) الفهرسة */
   { type:'indexing', transition:'zoom', badge:'لاحظي واكتشفي', title:'🔢 فهرسة القوائم: لكل عنصر عنوان',
@@ -766,7 +771,7 @@ const SLIDES = [
     alt:{ label:'⚠️ جرّبي قائمة مختلطة', code:'mixed = [5, "a", 2]\nprint(min(mixed))', output:"TypeError: '<' not supported between\ninstances of 'str' and 'int'" } },
 
   /* 15) الصف Tuple */
-  { type:'tuple', transition:'slide', badge:'لاحظي واكتشفي', title:'🔒 صف البيانات Tuple',
+  { type:'tuple', transition:'slide', badge:'استراتيجية الفهم القرائي • لاحظي واكتشفي', title:'🔒 صف البيانات Tuple',
     points:['هيكل بيانات خطي مرتّب مثل القائمة.','عناصره داخل أقواس دائرية <b class="mono">( )</b>.','<b>غير قابل للتعديل</b> بعد إنشائه.','يناسب البيانات الثابتة كرقم الهوية والبريد ← أكثر أمانًا.'],
     name:'PersonalInfo',
     items:['"Sara"','"sara@edu.sa"','1234'],
@@ -875,7 +880,7 @@ const SLIDES = [
     options:[{ icon:'أ', t:'89', code:1 },{ icon:'ب', t:'95', code:1 },{ icon:'ج', t:'98', code:1 },{ icon:'د', t:'-1', code:1 }],
     answer:1, explain:'الفهرس -1 يشير دائمًا إلى آخر عنصر في القائمة' },
 
-  /* 23) صح أم خطأ */
+  /* 26) صح أم خطأ */
   { type:'tf', transition:'slide', badge:'صح أم خطأ', title:'✔️✖️ صح أم خطأ؟',
     items:[
       { s:'تُكتب القائمة بين أقواس مربعة <span class="mono">[ ]</span>.', a:true,  why:'صحيح ✔ والصف بين أقواس دائرية ( ).' },
@@ -885,7 +890,7 @@ const SLIDES = [
       { s:'يُشترط أن تكون عناصر القائمة من النوع نفسه.', a:false, why:'خطأ ✖ يمكن أن تختلف أنواع العناصر.' },
     ] },
 
-  /* 24) تحدي الدقيقة */
+  /* 27) تحدي الدقيقة */
   { type:'challenge', transition:'zoom', badge:'تحدي الدقيقة', title:'⏱️ تحدي الدقيقة: توقّعي الناتج!',
     seconds:60,
     listCode:'C = ["red", "orange", "green", "blue", "white"]',
@@ -901,7 +906,7 @@ const SLIDES = [
       { c:'C[0] = C[4]\nC[1] = C[-2]\nprint(C)', r:"['white', 'blue', 'green',\n 'blue', 'white']" },
     ] },
 
-  /* 25) التعلم التعاوني */
+  /* 28) التعلم التعاوني */
   { type:'task', transition:'slide', badge:'التعلم التعاوني', title:'👩‍💻 تحدي المجموعات: اكتبي البرنامج',
     seconds:180,
     roles:[{ i:'👩‍💻', n:'المبرمجة' },{ i:'🔍', n:'المدقّقة' },{ i:'⏱️', n:'ضابطة الوقت' },{ i:'📢', n:'المتحدثة' }],
@@ -920,9 +925,9 @@ const SLIDES = [
       'print(Subject)',
     ] },
 
-  /* 26) مراجعة */
+  /* 29) مراجعة */
   { type:'flip', transition:'zoom', badge:'مراجعة', title:'🧩 خلاصة الدرس في 6 بطاقات', cols:3,
-    hint:'اسألي الطالبات أولًا… ثم اقلبي البطاقة',
+    hint:'اقلبي البطاقة',
     cards:[
       { icon:'📋', q:'القائمة List', a:'مجموعة مرتبة <b>قابلة للتعديل</b> بين <span class="mono">[ ]</span>' },
       { icon:'🔒', q:'الصف Tuple', a:'مجموعة مرتبة <b>غير قابلة للتعديل</b> بين <span class="mono">( )</span>' },
@@ -932,17 +937,16 @@ const SLIDES = [
       { icon:'🌳', q:'هياكل البيانات', a:'بسيطة، وغير بسيطة (خطية وغير خطية)' },
     ] },
 
-  /* 27) التقييم الذاتي */
+  /* 30) التقييم الذاتي */
   { type:'rating', transition:'fade', badge:'التقييم الفوري', title:'🌡️ كيف تقيّمين فهمك اليوم؟',
-    question:'اضغطي على الوجه الذي يعبّر عنكِ (يمكن لكل طالبة الضغط مرة)',
     options:[{ e:'🤩', t:'فهمت وأستطيع الشرح لزميلتي' },{ e:'🙂', t:'فهمت وأحتاج تدريبًا' },{ e:'🤔', t:'أحتاج مساعدة' }],
     exit:'اكتبي الفرق بين القائمة والصف مع مثال برمجي لكل منهما.' },
 
-  /* 28) الختام */
+  /* 31) الختام */
   { type:'closing', transition:'zoom',
     title:'أنتِ مبرمجة المستقبل 💜',
     text:'اليوم نظّمتِ البيانات في قوائم وصفوف… وغدًا تبنين بها تطبيقات تخدم وطنك 🇸🇦',
-    code:'my_skills = ["List", "Tuple", "Index", "Functions"]\nfor skill in my_skills:\n    print("I mastered", skill, "✅")',
+    code:'my_skills = ["List", "Tuple", "Index", "Functions"]\nprint("I mastered:", my_skills, "✅")',
     homework:'الواجب: تدريب 4 • صفحة 147' },
 ];
 
@@ -1168,7 +1172,7 @@ const T = {
   goals:{
     render:d=>`${head(d)}<div class="s-body">
       <div class="goals">${d.items.map((g,k)=>`<div class="goal anim"><span class="g-num">${k+1}</span><span class="g-ico">${g.icon}</span><span>${g.text}</span></div>`).join('')}</div>
-      <div class="goals-side anim"><div class="big-emoji float-ico">🎯</div>${codeBlock(d.code,'goals.py')}</div></div>`
+      <div class="goals-side anim"><div class="big-emoji float-ico">${d.emoji||'🎯'}</div>${codeBlock(d.code,d.file||'goals.py')}</div></div>`
   },
 
   /* ---------- فك الشيفرة ---------- */
@@ -1590,7 +1594,7 @@ const T = {
   /* ---------- التقييم الذاتي ---------- */
   rating:{
     render:d=>`${head(d)}<div class="s-body col">
-      <p class="lead anim">${d.question}</p>
+      ${d.question?`<p class="lead anim">${d.question}</p>`:''}
       <div class="rates">${d.options.map(o=>`<div class="rate anim" role="button" tabindex="0"><span class="re">${o.e}</span><b>${o.t}</b><span class="rc">0</span></div>`).join('')}</div>
       <div class="exit anim">🎟️ <b>بطاقة الخروج:</b> ${d.exit}</div>
       <button class="btn ghost sm anim" data-a="reset">↺ تصفير</button></div>`,
